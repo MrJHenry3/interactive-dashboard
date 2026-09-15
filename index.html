@@ -5,28 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     
+    //Link CSS stylesheet
+    <link rel="stylesheet" href="css/style.css">
+
     <!-- Bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="js/script.js" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
 </head>
 <body>
-    
-    <h1> My Interactive Dashboard</h1>
-    <p> This dashboard was created by Joseph Henry for the Web 115 course at Wake Tech.</p>
-    <link rel="stylesheet" href="css/style.css">
-    <script> document.write("This dashboard demonstrates how JavaScript can be used to create interactive websites.")
-        <noscript>
-            <p>Unfortunately, your web browser does not support JavaScript</p>
-            <!--The <noscript> is for web browsers with JavaScript rendering disabled.-->
-        </noscript>
+        
+        <h1> My Interactive Dashboard</h1>
+        <p> This dashboard was created by Joseph Henry for the Web 115 course at Wake Tech.</p>
 
-         <div class="container">
-    <div class="row">
-        <!-- Dashboard Content -->
+        <script> 
+            document.write("This dashboard demonstrates how JavaScript can be used to create interactive websites.");
+        </script>
+
+        <noscript> Unfortunately, your web browser does not support JavaScript</noscript>
+            
+        
+
+        <div class="container">
+            <div class="row">
+
+                //Create form "weekly-tasks"
+                <div class="col" id="weekly-tasks">
+
+                //Link external JavaScript
+                <script src="task-manager.js"></script>
+            
+                //Create form with 3 input fields (Name, Daily Taask Goal, & Weekly Bonus Tasks)
+                <form id = "task-form">
+                    <div class=" form-group">
+                        <label for="user-name">Name:</label>
+                        <input type="text" id="user-name" name="userName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="daily-goal">Daily Task Goal:</label>
+                        <input type="number" id="daily-goal" name="dailyGoal" min="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weekly-bonus">Weekly Bonus Tasks:</label>
+                        <input type="number" id="weekly-bonus" name="weeklyBonus" min="0" required>
+                    </div>
+
+                    //Add a button to the form with an ID of "goal-btn".
+                    <button type="button" id="goal-btn">Submit</button>
+                </form>
+
+                //Add an Output Area
+                <p id="goal-message"></p>
+
+            </div>
+        </div>
+        
     </div>
-</div>
-    </script>
        
 </body>
 </html>
