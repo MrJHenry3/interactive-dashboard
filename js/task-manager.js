@@ -1,7 +1,7 @@
         
        
        function weeklyGoal(userName, dailyGoal, bonusTasks) {
-        // Weekly Goal: Calculate the total weekly task goal for a user.
+       //Weekly Goal: Calculate the total weekly task goal for a user. -->
         
  
         // Output message to console
@@ -10,7 +10,7 @@
         // Calculate weekly goal based on number of workdays (5) per week
         let weeklyGoal = dailyGoal * 5; 
  
-        // Add bonusTasks to weeklyGoal. 
+        // Add bonusTasks to weeklyGoal.
         // Note: Check for data type issues
         let totalGoal = weeklyGoal + bonusTasks; 
  
@@ -22,7 +22,7 @@
         let dailyGoal = document.getElementById("dailyGoal").value;
         let bonusTasks = document.getElementById("bonusTasks").value;
     
-        //Call the weeklyGoal() function
+        // Call the weeklyGoal() function
         weeklyGoal(userName, dailyGoal, bonusTasks);
         
     };
