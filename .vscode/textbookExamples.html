@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        Enter your name: <input type="text" id="user-name">
+    </form>
+    <script type="text/javascript">
+        let counter = 0;
+        let nameElement = document.getElementById("user-name");
+        nameElement.onfocus = function () {
+            if (counter === 0) {
+                window.alert('Don\'t forget to capitalize!');
+                counter += 1;
+            }
+        }
+    </script>
+</body>
+</html>

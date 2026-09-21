@@ -28,6 +28,52 @@
 
         <div class="container">
             <div class="row">
+                <div class="col" id="metric-converter">
+                    <form>
+                        <label>Enter a value: 
+                            <input id="value1" type="text">
+                        </label>
+                        
+                        <br><br>
+
+                        <label>From Unit:
+                            <select id="units1">
+                                <option value="in">in</option>
+                                <option value="ft">ft</option>
+                                <option value="yd">yd</option>
+                                <option value="mi">mi</option>
+                                <option value="cm">cm</option>
+                                <option value="m">m</option>
+                                <option value="km">km</option>
+                            </select>
+                    </label>
+                    
+                    <br><br>
+                 
+                    <label>To Unit:
+                        <select id="units2">
+                            <option value="cm">cm</option>
+                            <option value="m">m</option>
+                            <option value="km">km</option>
+                            <option value="in">in</option>
+                            <option value="ft">ft</option>
+                            <option value="yd">yd</option>
+                            <option value="mi">mi</option>
+                        </select>
+                    </label>
+                    
+                    <br><br>
+
+                    <button id="convert-button" type="submit">Convert</button>
+                    <p id="result"></p>
+                </form>
+                    <script src="metric-converter.js"></script>
+                    
+                           
+                </div>
+            </div>
+            
+        </div>
 
                 <!--Create form "weekly-tasks"-->
                 <div class="col" id="weekly-tasks">
@@ -35,7 +81,7 @@
                 <!--Link external JavaScript-->
                 <script src="task-manager.js"></script>
             
-                <!--Create form with 3 input fields (Name, Daily Taask Goal, & Weekly Bonus Tasks)-->
+                <!--Create form with 3 input fields (Name, Daily Task Goal, & Weekly Bonus Tasks)-->
                 <form id = "task-form">
                     <div class=" form-group">
                         <label for="user-name">Name:</label>
