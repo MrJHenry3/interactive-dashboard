@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Interactive Dashboard</title>
     
     <!--Link CSS stylesheet-->
     <link rel="stylesheet" href="css/style.css">
@@ -16,19 +16,42 @@
 <body>
         
         <h1> My Interactive Dashboard</h1>
-        <p> This dashboard was created by Joseph Henry for the Web 115 course at Wake Tech.</p>
+        
+	<p>This dashboard was created by Joseph Henry for the Web 115 course at Wake Tech.</p>
 
-        <script> 
-            document.write("This dashboard demonstrates how JavaScript can be used to create interactive websites.");
-        </script>
+        <script>document.write("This dashboard demonstrates how JavaScript can be used to create interactive 	websites.");</script>
 
-        <noscript> Unfortunately, your web browser does not support JavaScript</noscript>
+        <noscript> Unfortunately, your web browser does not support JavaScript
+	</noscript>
             
         
 
         <div class="container">
             <div class="row">
-                <div class="col" id="metric-converter">
+
+	    <div class="col" id="magic-eight-ball">
+     		<script src="magic-eight-ball.js" defer></script>
+     		<link rel="stylesheet" href="css/magic-eight-ball.css">
+
+     		<h2 class="heading">Magic Eight Ball</h2>
+
+      		<form>
+
+       			<p>Type a yes/no question below, then click on the Eight Ball below to get your answer!</p>
+
+       			<input id="question" name="question" size="80">
+
+       			<div id="magicEightBall">
+
+        			<div id="circle"></div>
+        			<img id="ball" src="img/magic-eight-ball.png"/>
+       			</div>
+       			<button id="reset" name="reset" type="reset">Ask another question</button>
+      		</form>
+      		<br>
+   	    </div>
+
+            <div class="col" id="metric-converter">
                     <form>
                         <label>Enter a value: 
                             <input id="value1" type="text">
@@ -76,7 +99,7 @@
         </div>
 
                 <!--Create form "weekly-tasks"-->
-                <div class="col" id="weekly-tasks">
+        <div class="col" id="weekly-tasks">
 
                 <!--Link external JavaScript-->
                 <script src="task-manager.js"></script>
