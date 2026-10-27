@@ -1,5 +1,6 @@
 //declare global array to track tasks
-let myTasks=[];
+let task=[];
+let nextID = 1;
 
 //Create unordered list
 let userTasks = document.createElement("ul");
@@ -27,9 +28,6 @@ function weeklyGoal(userName, dailyGoal, bonusTasks) {
 
     // Output message to console
     console.log("Checking status for: " + userName);
-
-
-    document.createElement
 
 } 
 
@@ -59,9 +57,115 @@ document.getElementById("add-task").addEventListener("click", function() {
 
     //: Append the list item text to the <li>, 
     // then append the <li> to the dynamically created <ul>.
-    let listItem = textContent = taskName;
+    let listItem = document.createElement("li");
+    
+    listItem.textContent = taskName;
 
-    userTasks.appendChild(listItem);
+    userTasks.appendChild(listItem)
+    document.getElementById("task-name").value="";
+
 
 });
+
+function addTask(name, priority, isImportant) {
+
+let task = {
+	id: nextId,
+	name: name,
+	priority: priority,
+	isImportant: isImportant,
+	isCompleted: false
+};
+
+nextId++;
+
+tasks.push(task);
+
+console.log(JSON.stringify(tasks));
+
+displayTasks();
+
+}
+
+
+function displayTasks() {
+	let taskList = document.getElementById("user-tasks");
+	taskList.innerHTML = "";
+	tasks.forEach(function(task) {
+		let li = document.creatElement("li");
+		li.textContent = task.name + "(" + task.priority + ")";
     
+        //Styling
+	
+        if(task.isImportant) {
+            li.style.color = "red";
+        }
+        
+        if(task.priority === "High") {
+            li.style.fontWeight = "bold";
+        }
+
+        if(task.priority === "Medium") {
+            li.style.color = "orange";
+        }
+
+        if (task.priority === "Low") {
+            li.style.color = "green";
+        }
+	
+
+
+        if (task.isCompleted) {
+            li.style.textDecoration = "line-through";
+        }
+
+	
+        let completeButton = document.createElement("button");
+
+        completeButton.textContent = "Complete";
+
+        completeButton.addEventListener("click", function() {
+
+            task.isCompleted = true;
+
+            console.log(JSON.stringify(tasks));
+
+            displayTasks();
+            
+        });
+
+                // Add button to List
+        li.appendChild(completeButton);
+
+        // Add LI to Unordered List
+        taskList.appendChild(li);
+}
+
+
+	
+	
+        let completeButton = document.createElement("button");
+        completeButton.textContent = "Complete";
+        completeButton.addEventListener("click", function() {
+            task.isCompleted = true;
+            console.log(JSON.stringify(tasks));
+            displayTasks();
+    });
+
+
+document.getElementByID("task-button").addEventListener("click", function() {
+
+	let name = document.getElementById("task-name2").value;
+	
+	let priority = document.getElementById("task-priority").value;
+
+	let isImportant = document.getElementById("its-important").checked;
+
+	addTask(
+	    name,
+	    priority,
+	    isImportant
+	);
+
+
+});
