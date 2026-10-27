@@ -1,5 +1,5 @@
 //declare global array to track tasks
-let task=[];
+let tasks=[];
 let nextID = 1;
 
 //Create unordered list
