@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Interactive Dashboard</title>
-    
-    <!--Link CSS stylesheets-->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/magic-eight-ball.css">
 
     <!-- Bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -99,11 +95,14 @@
             
     </div>
 
-<br></br>
+<br></br> 
 
         <!--Create form "Weekly Tasks"-->
         <div class="row" id="weekly-tasks">
             <h class="heading">Weekly Tasks</h>
+            
+            <!--Add new divider with id of task-list-->
+            <div class="row" id="task-list">
             
             <!--Add new divider with id of task-list-->
             <div class="row" id="task-list">
@@ -112,6 +111,8 @@
                 <h3 class="heading">Weekly Task List</h3> 
                     
                     <p>Enter a task below to manage your goals.</p>
+		   
+		    <ul id="user-tasks"></ul>
                     
                     <form>
                         <label for="task-name"> Enter task:</label>
@@ -143,6 +144,23 @@
                 <!--Add an Output Area-->
                 <p id="goal-message"></p>
 
+                                <form>
+                    <label for="task-name2"> Enter a task name:</label>
+                    <input type="text" id="task-name2" name="task-name2">
+                    <label for="task-priority">Choose a priority:</label>
+                        <select name="task-priority" id="task-priority">
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                        </select>
+                        <!--A checkbox for marking a task as important-->
+                        <input type="checkbox" id="its-important" name="itsImportant">
+                        <label for="its-important">Mark Important</label>
+                        <!--A submit button to add the task to the list-->
+                        <button type="button" id="task-button">Add Task</button>
+                        <!--A  delete list button to remove the entire list-->
+                        <button type="button" id="delete-list">Delete  List</button>
+
             </div>
 
             </div>
@@ -152,6 +170,10 @@
  
     <script src="js/magic-eight-ball.js" defer></script>
     <script src="js/metric-converter.js" defer></script>
-    <script src="js/task-manager.js"></script>  
+    <script src="js/task-manager.js"></script>
+    
+    <!--Link CSS stylesheets-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/magic-eight-ball.css">
 </body>
 </html>
